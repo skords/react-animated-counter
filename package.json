@@ -1,62 +1,64 @@
 {
-  "name": "react-animated-counter",
-  "version": "1.2.4",
-  "description": "React Animated Counter Component",
-  "main": "dist/index.js",
-  "scripts": {
-    "build": "rm -rf dist && NODE_ENV=production babel ./src --out-dir dist --copy-files"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/TuckerMassad/react-animated-counter.git"
-  },
-  "keywords": [
-    "react",
-    "animated",
-    "counter",
-    "components",
-    "ui",
-    "number-animation",
-    "number",
-    "animation",
-    "robinhood",
-    "style",
-    "up",
-    "down",
-    "money",
-    "counting",
-    "increment",
-    "decrement",
-    "tick",
-    "ticker"
-  ],
-  "author": "tuckermassad",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/TuckerMassad/react-animated-counter/issues"
-  },
-  "homepage": "https://github.com/TuckerMassad/react-animated-counter#readme",
-  "dependencies": {
-    "@babel/polyfill": "^7.12.1",
-    "framer-motion": "^10.11.4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.21.0",
-    "@babel/core": "^7.21.4",
-    "@babel/preset-env": "^7.21.4",
-    "@babel/preset-react": "^7.18.6"
-  },
-  "babel": {
-    "presets": [
-      "@babel/react",
-      "@babel/env"
-    ],
-    "plugins": [
-      "@babel/proposal-class-properties",
-      "@babel/plugin-transform-runtime"
-    ]
-  }
+	"name": "react-animated-counter",
+	"version": "1.2.4",
+	"description": "React Animated Counter Component",
+	"main": "dist/index.js",
+	"scripts": {
+		"build": "rm -rf dist && NODE_ENV=production babel ./src --out-dir dist --copy-files"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/TuckerMassad/react-animated-counter.git"
+	},
+	"keywords": [
+		"react",
+		"animated",
+		"counter",
+		"components",
+		"ui",
+		"number-animation",
+		"number",
+		"animation",
+		"robinhood",
+		"style",
+		"up",
+		"down",
+		"money",
+		"counting",
+		"increment",
+		"decrement",
+		"tick",
+		"ticker"
+	],
+	"author": "tuckermassad",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/TuckerMassad/react-animated-counter/issues"
+	},
+	"homepage": "https://github.com/TuckerMassad/react-animated-counter#readme",
+	"dependencies": {
+		"@babel/polyfill": "^7.12.1",
+		"framer-motion": "^10.11.4",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"react-scripts": "5.0.1"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.21.0",
+		"@babel/core": "^7.21.4",
+		"@babel/plugin-proposal-class-properties": "^7.18.6",
+		"@babel/plugin-transform-runtime": "^7.21.4",
+		"@babel/preset-env": "^7.21.4",
+		"@babel/preset-react": "^7.18.6"
+	},
+	"babel": {
+		"presets": [
+			"@babel/react",
+			"@babel/env"
+		],
+		"plugins": [
+			"@babel/plugin-proposal-class-properties",
+			"@babel/plugin-transform-runtime"
+		]
+	}
 }

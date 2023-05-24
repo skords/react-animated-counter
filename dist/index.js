@@ -10,7 +10,7 @@ var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/sli
 var _framerMotion = require("framer-motion");
 var _react = _interopRequireWildcard(require("react"));
 var _hooks = require("./hooks");
-require("./styles.css");
+var _stylesModule = _interopRequireDefault(require("./styles.module.css"));
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 // Adjusts width of individual narrow digits 
@@ -71,7 +71,7 @@ var NumberColumn = function NumberColumn(_ref2) {
     return setColumnToNumber(digit);
   }, [digit]);
   return /*#__PURE__*/_react["default"].createElement("div", {
-    className: "ticker-column-container",
+    className: [_stylesModule["default"]['ticker-column-container'], "ticker-column-container"],
     ref: columnContainer,
     style: {
       fontSize: fontSize,
@@ -86,7 +86,7 @@ var NumberColumn = function NumberColumn(_ref2) {
       x: 0,
       y: position
     },
-    className: "ticker-column ".concat(animationClass),
+    className: [_stylesModule["default"]['ticker-column'], 'ticker-column', "".concat(_stylesModule["default"][animationClass]), "".concat(animationClass)],
     onAnimationComplete: function onAnimationComplete() {
       return setAnimationClass("");
     }
@@ -103,7 +103,7 @@ var NumberColumn = function NumberColumn(_ref2) {
       }
     }, num));
   })), /*#__PURE__*/_react["default"].createElement("span", {
-    className: "number-placeholder"
+    className: [_stylesModule["default"]['number-placeholder'], 'number-placeholder']
   }, "0"));
 };
 
@@ -128,7 +128,7 @@ var AnimatedCounter = function AnimatedCounter(_ref3) {
   if (value < previousNumber) delta = 'decrease';
   return /*#__PURE__*/_react["default"].createElement(_framerMotion.motion.div, {
     layout: true,
-    className: "ticker-view"
+    className: [_stylesModule["default"]['ticker-view'], 'ticker-view']
   }, numArray.map(function (number, index) {
     return number === "." ? /*#__PURE__*/_react["default"].createElement(DecimalColumn, {
       key: index,
