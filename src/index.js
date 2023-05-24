@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 import { usePrevious } from "./hooks";
-import './styles.css';
+import styles from './styles.module.css';
 
 // Adjusts width of individual narrow digits 
 const calculateDigitWidth = (digit) => {
@@ -21,7 +21,7 @@ const formatForDisplay = (number, includeDecimals) => {
 }
 
 // Render decimals
-const DecimalColumn = ({ 
+const DecimalColumn = ({
   fontSize,
   color,
 }) => {
@@ -37,7 +37,7 @@ const DecimalColumn = ({
 }
 
 // Render numbers
-const NumberColumn = ({ 
+const NumberColumn = ({
   digit,
   delta,
   fontSize,
@@ -63,9 +63,9 @@ const NumberColumn = ({
 
   return (
     <div
-      className="ticker-column-container"
+      className={[styles['ticker-column-container'], "ticker-column-container"]}
       ref={columnContainer}
-      style={{ 
+      style={{
         fontSize: fontSize,
         lineHeight: fontSize,
         color: color,
@@ -76,12 +76,12 @@ const NumberColumn = ({
     >
       <motion.div
         animate={{ x: 0, y: position }}
-        className={`ticker-column ${animationClass}`}
+        className={[styles['ticker-column'], 'ticker-column', `${styles[animationClass]}`, `${animationClass}`]}
         onAnimationComplete={() => setAnimationClass("")}
       >
         {[9, 8, 7, 6, 5, 4, 3, 2, 1, 0].map((num) => (
           <div key={num} className="ticker-digit">
-            <span style={{ 
+            <span style={{
               fontSize: fontSize,
               lineHeight: fontSize,
               color: color,
@@ -92,7 +92,7 @@ const NumberColumn = ({
           </div>
         ))}
       </motion.div>
-      <span className="number-placeholder">0</span>
+      <span className={[styles['number-placeholder'], 'number-placeholder']}>0</span>
     </div>
   );
 }
@@ -114,7 +114,7 @@ const AnimatedCounter = ({
   if (value < previousNumber) delta = 'decrease';
 
   return (
-    <motion.div layout className='ticker-view'>
+    <motion.div layout className={[styles['ticker-view'], 'ticker-view']}>
       {numArray.map((number, index) =>
         number === "." ? (
           <DecimalColumn
